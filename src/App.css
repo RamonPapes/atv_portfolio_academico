@@ -24,22 +24,35 @@
   background: var(--cor-marca-suave);
 }
 
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaco-4) var(--espaco-6);
+  padding-bottom: var(--espaco-4);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.cabecalho__identidade {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-1);
+}
+
 .cabecalho__marca {
   font-family: var(--fonte-mono);
   font-size: var(--texto-sm);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--cor-texto-suave);
-  margin-bottom: var(--espaco-2);
-}
-
-.cabecalho h1 {
-  margin-bottom: var(--espaco-5);
 }
 
 .navegacao ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
   gap: var(--espaco-2) var(--espaco-3);
   list-style: none;
   margin: 0;
@@ -94,14 +107,17 @@
 }
 
 .apresentacao__avatar {
-  width: 160px;
-  height: 160px;
+  width: clamp(6rem, 18vw, 10rem);
+  height: clamp(6rem, 18vw, 10rem);
   flex-shrink: 0;
   border-radius: var(--raio-completo);
   box-shadow: var(--sombra-md);
 }
 
 .apresentacao__texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   flex: 1 1 320px;
 }
 
@@ -126,9 +142,18 @@
 }
 
 /* ---- Botão ---------------------------------------------------------------- */
-.botao {
-  display: inline-block;
+.grupo-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-3);
   margin-top: var(--espaco-5);
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--espaco-3) var(--espaco-5);
   border: 1px solid var(--cor-marca-borda);
   border-radius: var(--raio-md);
@@ -150,18 +175,31 @@
   box-shadow: var(--sombra-md);
 }
 
-/* ---- Quadro de atividades ------------------------------------------------- */
-.atividades {
-  margin-top: var(--espaco-5);
+.botao--secundario {
+  background: transparent;
+  border-color: var(--cor-borda-forte);
+  color: var(--cor-texto-forte);
 }
 
-.atividades__titulo {
-  margin-bottom: var(--espaco-3);
+.botao--secundario:hover,
+.botao--secundario:focus-visible {
+  background: var(--cor-superficie);
+  border-color: var(--cor-marca-borda);
+  color: var(--cor-marca);
+}
+
+/* ---- Quadro de atividades ------------------------------------------------- */
+.atividades {
+  display: grid;
+  gap: var(--espaco-4);
+  margin-top: var(--espaco-5);
 }
 
 .atividades__lista {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(17rem, 100%), 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
   gap: var(--espaco-4);
   list-style: none;
   margin: 0;
@@ -188,4 +226,103 @@
 
 .rodape p + p {
   margin-top: var(--espaco-2);
+}
+
+@media (max-width: 47.9375rem) {
+  .app {
+    gap: var(--espaco-6);
+    padding: var(--espaco-4);
+  }
+
+  .conteudo {
+    gap: var(--espaco-6);
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espaco-4);
+  }
+
+  .navegacao {
+    width: 100%;
+  }
+
+  .navegacao ul {
+    justify-content: flex-start;
+    gap: var(--espaco-2);
+  }
+
+  .apresentacao {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espaco-5);
+    padding: var(--espaco-5);
+  }
+
+  .apresentacao__texto {
+    flex-basis: auto;
+  }
+}
+
+@media (max-width: 30rem) {
+  .app {
+    padding: var(--espaco-3);
+  }
+
+  .apresentacao {
+    align-items: center;
+    text-align: center;
+    padding: var(--espaco-4);
+    border-radius: var(--raio-md);
+  }
+
+  .apresentacao__texto {
+    align-items: center;
+  }
+
+  .apresentacao__dados {
+    justify-content: center;
+    gap: var(--espaco-2) var(--espaco-4);
+  }
+
+  .grupo-botoes {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navegacao ul {
+    gap: var(--espaco-1);
+  }
+
+  .navegacao a {
+    padding: var(--espaco-2);
+  }
+
+  .atividades__lista {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+}
+
+@media (min-width: 90rem) {
+  .app {
+    gap: var(--espaco-8);
+    padding: var(--espaco-7) var(--espaco-6);
+  }
+
+  .conteudo {
+    gap: var(--espaco-8);
+  }
+
+  .apresentacao {
+    gap: var(--espaco-7);
+    padding: var(--espaco-7);
+  }
+
+  .atividades__lista {
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: var(--espaco-5);
+  }
 }

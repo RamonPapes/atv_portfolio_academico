@@ -43,6 +43,28 @@ const ATIVIDADES = [
     descricao:
       'Componente reutilizável com número, título, descrição, tecnologias e ação, além dos estados de hover e foco.',
     tecnologias: ['React', 'CSS'],
+    link: `${REPOSITORIO}/commit/675a600`,
+  },
+  {
+    numero: 6,
+    titulo: 'Layout com Flexbox',
+    descricao:
+      'Cabeçalho, menu e grupo de botões alinhados com Flexbox. Problema resolvido: marca, título e menu ficavam empilhados e desalinhados, e os botões dependiam de margens fixas que quebravam ao mudar a largura da tela.',
+    tecnologias: ['CSS', 'Flexbox'],
+  },
+  {
+    numero: 7,
+    titulo: 'Grade de atividades com CSS Grid',
+    descricao:
+      'Quadro das entregas em grade adaptável com auto-fit e minmax, sem largura fixa. Problema resolvido: os cartões tinham altura desigual e a coluna mínima de 260px estourava a tela em celulares estreitos, gerando rolagem horizontal.',
+    tecnologias: ['CSS', 'Grid', 'Responsividade'],
+  },
+  {
+    numero: 8,
+    titulo: 'Homepage responsiva',
+    descricao:
+      'Pontos de ajuste em 768px, 480px e 1440px afinando menu, tipografia, margens, avatar e grade. Problema resolvido: em telas estreitas o cabeçalho comprimia o menu contra o título e o avatar de 160px roubava quase toda a largura útil.',
+    tecnologias: ['CSS', 'Media Queries', 'Responsividade'],
   },
 ]
 
@@ -54,8 +76,10 @@ function App() {
       </a>
 
       <header className="cabecalho" id="inicio">
-        <p className="cabecalho__marca">Ramon Papes</p>
-        <h1>Portfólio Acadêmico</h1>
+        <div className="cabecalho__identidade">
+          <p className="cabecalho__marca">Ramon Papes</p>
+          <h1>Portfólio Acadêmico</h1>
+        </div>
 
         <nav className="navegacao" aria-label="Navegação principal">
           <ul>
@@ -110,9 +134,18 @@ function App() {
               forma pública a minha evolução com HTML, CSS, JavaScript e React.
             </p>
 
-            <a className="botao" href="#atividades">
-              Ver as 30 atividades
-            </a>
+            <div className="grupo-botoes">
+              <a className="botao" href="#atividades">
+                Ver as 30 atividades
+              </a>
+              <a
+                className="botao botao--secundario"
+                href={REPOSITORIO}
+                rel="noreferrer"
+              >
+                Repositório no GitHub
+              </a>
+            </div>
           </div>
         </section>
 

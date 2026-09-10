@@ -1,5 +1,6 @@
 .cartao {
   display: flex;
+  min-width: 0;
 }
 
 .cartao__conteudo {
@@ -39,10 +40,12 @@
 .cartao__titulo {
   font-size: var(--texto-lg);
   color: var(--cor-texto-forte);
+  overflow-wrap: anywhere;
 }
 
 .cartao__descricao {
   max-width: none;
+  overflow-wrap: anywhere;
   font-size: var(--texto-sm);
   color: var(--cor-texto);
 }
@@ -66,7 +69,6 @@
   font-size: var(--texto-xs);
   font-weight: var(--peso-medio);
   line-height: 1.5;
-  white-space: nowrap;
 }
 
 /* ---- Ação -------------------------------------------------------------------- */
