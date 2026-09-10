@@ -4,10 +4,16 @@ import './CartaoAtividade.css'
  * @param {number}   numero      
  * @param {string}   titulo       
  * @param {string}   descricao    
- * @param {string[]} tecnologias  
+ * @param {string[]} tecnologia   
  * @param {string}   [link]       
  */
-function CartaoAtividade({ numero, titulo, descricao, tecnologias = [], link }) {
+function CartaoAtividade({
+  numero,
+  titulo,
+  descricao,
+  tecnologia: tecnologias = [],
+  link,
+}) {
   const numeroFormatado = String(numero).padStart(2, '0')
   const idTitulo = `atividade-${numero}-titulo`
 
