@@ -270,11 +270,11 @@ export const atividades = [
     numero: 22,
     titulo: 'Criar formulário de contato',
     descricao:
-      'Campos controlados de nome, e-mail, assunto e mensagem, com labels associados, required e confirmação simulada no envio.',
+      'Campos controlados de nome, e-mail, assunto e mensagem, cada um com label associado e required, validação própria com mensagem clara por campo e confirmação simulada no envio.',
     detalhes:
-      'Ainda não iniciada. Campos controlados com useState, labels associados, required e confirmação simulada no envio.',
+      'Um único useState guarda os quatro campos, o submit chama preventDefault e passa por uma função validar que devolve os erros; o primeiro campo inválido recebe o foco.',
     tecnologia: ['React', 'Formulários'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {

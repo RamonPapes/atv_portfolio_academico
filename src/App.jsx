@@ -3,6 +3,7 @@ import BuscaAtividades from './components/BuscaAtividades.jsx'
 import Cabecalho from './components/Cabecalho.jsx'
 import CartaoAtividade from './components/CartaoAtividade.jsx'
 import FiltroTecnologias from './components/FiltroTecnologias.jsx'
+import FormularioContato from './components/FormularioContato.jsx'
 import ModalAtividade from './components/ModalAtividade.jsx'
 import ProgressoAtividades from './components/ProgressoAtividades.jsx'
 import Rodape from './components/Rodape.jsx'
@@ -174,9 +175,12 @@ function App() {
         <section id="contato" aria-labelledby="titulo-contato">
           <h2 id="titulo-contato">Contato</h2>
           <p>
-            Dúvidas ou sugestões sobre alguma entrega? Fale comigo pelo e-mail{' '}
+            Dúvidas ou sugestões sobre alguma entrega? Escreva pelo formulário
+            abaixo ou pelo e-mail{' '}
             <a href="mailto:ramonpapes@gmail.com">ramonpapes@gmail.com</a>.
           </p>
+
+          <FormularioContato />
         </section>
       </main>
 

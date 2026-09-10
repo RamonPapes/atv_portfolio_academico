@@ -24,6 +24,9 @@
   --cor-aviso-suave: #fdefdb;
   --cor-aviso-borda: #efce99;
 
+  --cor-erro: #b3261e;
+  --cor-erro-suave: #fdeceb;
+
   --cor-neutro: #5a5468;
   --cor-neutro-suave: #f0eff3;
   --cor-neutro-borda: #d2cfd9;
@@ -102,6 +105,9 @@
     --cor-aviso: #f3c169;
     --cor-aviso-suave: rgba(243, 193, 105, 0.14);
     --cor-aviso-borda: rgba(243, 193, 105, 0.42);
+
+    --cor-erro: #ff9d94;
+    --cor-erro-suave: rgba(255, 157, 148, 0.12);
 
     --cor-neutro: #a6a0b4;
     --cor-neutro-suave: rgba(166, 160, 180, 0.12);
