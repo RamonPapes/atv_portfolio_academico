@@ -1,5 +1,6 @@
 import Cabecalho from './components/Cabecalho.jsx'
 import CartaoAtividade from './components/CartaoAtividade.jsx'
+import Rodape from './components/Rodape.jsx'
 import avatar from './assets/avatar.svg'
 import './App.css'
 
@@ -72,6 +73,13 @@ const ATIVIDADES = [
     titulo: 'Componente Cabecalho',
     descricao:
       'Cabeçalho e menu extraídos para Cabecalho.jsx, com os estilos movidos para Cabecalho.css e os links vindos de um array. Problema resolvido: marcação e CSS do topo estavam misturados ao restante da página, sem fronteira clara entre as partes.',
+    tecnologias: ['React', 'Componentes'],
+  },
+  {
+    numero: 10,
+    titulo: 'Componente Rodape',
+    descricao:
+      'Rodapé extraído para Rodape.jsx, com autor e disciplina por props, ano calculado uma única vez no módulo e link de retorno ao início. Problema resolvido: new Date().getFullYear() ficava solto no meio do JSX da página, pronto para ser repetido em cada lugar que precisasse do ano.',
     tecnologias: ['React', 'Componentes'],
   },
 ]
@@ -183,15 +191,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="rodape">
-        <p>
-          Portfólio acadêmico desenvolvido para a disciplina de Desenvolvimento
-          Web &mdash; {new Date().getFullYear()}.
-        </p>
-        <p>
-          <a href="#inicio">Voltar ao início</a>
-        </p>
-      </footer>
+      <Rodape autor="Ramon Enrico Alves Papes" disciplina="Desenvolvimento Web" />
     </div>
   )
 }
