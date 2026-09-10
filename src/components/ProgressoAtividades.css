@@ -1,12 +1,18 @@
 .progresso {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--espaco-2);
-  padding: var(--espaco-3) var(--espaco-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+  padding: var(--espaco-4) var(--espaco-5);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio-md);
   background: var(--cor-superficie);
+}
+
+.progresso__texto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--espaco-2);
 }
 
 .progresso__numero {
@@ -19,4 +25,42 @@
 .progresso__rotulo {
   font-size: var(--texto-sm);
   color: var(--cor-texto-suave);
+}
+
+.progresso__percentual {
+  margin-inline-start: auto;
+  font-family: var(--fonte-mono);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-forte);
+  color: var(--cor-marca);
+}
+
+.progresso__trilha {
+  overflow: hidden;
+  block-size: 0.75rem;
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-completo);
+  background: var(--cor-neutro-suave);
+}
+
+.progresso__preenchimento {
+  block-size: 100%;
+  min-inline-size: 0;
+  border-radius: var(--raio-completo);
+  background: var(--cor-marca);
+  transition: inline-size 400ms ease;
+}
+
+.progresso__trilha[data-completo='sim'] .progresso__preenchimento {
+  background: var(--cor-sucesso);
+}
+
+.progresso__trilha[data-completo='sim'] {
+  border-color: var(--cor-sucesso-borda);
+}
+
+@media (forced-colors: active) {
+  .progresso__preenchimento {
+    background: Highlight;
+  }
 }

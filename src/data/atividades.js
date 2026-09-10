@@ -208,9 +208,9 @@ export const atividades = [
     numero: 20,
     titulo: 'Criar barra de progresso',
     descricao:
-      'Barra acessível com valor textual e atributos ARIA adequados, exibindo corretamente os extremos de 0% e 100%.',
+      'Barra com role progressbar, aria-valuenow e aria-valuetext, percentual visível em texto e cor de conclusão ao chegar a 100%. O cálculo trata os extremos para que 0% e 100% nunca sejam arredondados por engano.',
     tecnologia: ['CSS', 'Acessibilidade'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {
