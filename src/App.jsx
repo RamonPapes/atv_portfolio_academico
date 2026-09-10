@@ -3,6 +3,7 @@ import BuscaAtividades from './components/BuscaAtividades.jsx'
 import Cabecalho from './components/Cabecalho.jsx'
 import CartaoAtividade from './components/CartaoAtividade.jsx'
 import FiltroTecnologias from './components/FiltroTecnologias.jsx'
+import ModalAtividade from './components/ModalAtividade.jsx'
 import ProgressoAtividades from './components/ProgressoAtividades.jsx'
 import Rodape from './components/Rodape.jsx'
 import {
@@ -38,6 +39,7 @@ function App() {
   const [tecnologiaSelecionada, setTecnologiaSelecionada] =
     useState(FILTRO_PADRAO)
   const [termoBusca, setTermoBusca] = useState('')
+  const [atividadeAberta, setAtividadeAberta] = useState(null)
 
   const termo = normalizar(termoBusca)
 
@@ -158,7 +160,11 @@ function App() {
                 </li>
               ) : (
                 atividadesVisiveis.map((atividade) => (
-                  <CartaoAtividade key={atividade.id} {...atividade} />
+                  <CartaoAtividade
+                    key={atividade.id}
+                    {...atividade}
+                    aoAbrir={() => setAtividadeAberta(atividade)}
+                  />
                 ))
               )}
             </ul>
@@ -175,6 +181,13 @@ function App() {
       </main>
 
       <Rodape autor="Ramon Enrico Alves Papes" disciplina="Desenvolvimento Web" />
+
+      {atividadeAberta && (
+        <ModalAtividade
+          atividade={atividadeAberta}
+          aoFechar={() => setAtividadeAberta(null)}
+        />
+      )}
     </div>
   )
 }

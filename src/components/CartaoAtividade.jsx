@@ -15,7 +15,7 @@ const APARENCIA_PADRAO = APARENCIA_STATUS[STATUS.PLANEJADA]
  * @param {string}   descricao    
  * @param {string[]} tecnologia   
  * @param {string}   [status]     
- * @param {string}   [link]       
+ * @param {Function} aoAbrir      
  */
 function CartaoAtividade({
   numero,
@@ -23,7 +23,7 @@ function CartaoAtividade({
   descricao,
   tecnologia: tecnologias = [],
   status = STATUS.PLANEJADA,
-  link,
+  aoAbrir,
 }) {
   const numeroFormatado = String(numero).padStart(2, '0')
   const idTitulo = `atividade-${numero}-titulo`
@@ -64,17 +64,16 @@ function CartaoAtividade({
         )}
 
         <p className="cartao__rodape">
-          {link ? (
-            <a className="cartao__acao" href={link}>
-              Ver atividade
-              <span className="sr-only"> {numeroFormatado}: {titulo}</span>
-              <span className="cartao__seta" aria-hidden="true">
-                →
-              </span>
-            </a>
-          ) : (
-            <span className="cartao__acao cartao__acao--inativa">Em breve</span>
-          )}
+          <button type="button" className="cartao__acao" onClick={aoAbrir}>
+            Ver atividade
+            <span className="sr-only">
+              {' '}
+              {numeroFormatado}: {titulo}
+            </span>
+            <span className="cartao__seta" aria-hidden="true">
+              →
+            </span>
+          </button>
         </p>
       </article>
     </li>

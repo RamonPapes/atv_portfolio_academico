@@ -89,9 +89,13 @@
   display: inline-flex;
   align-items: center;
   gap: var(--espaco-2);
+  padding: 0;
+  border: 0;
+  background: none;
   font-size: var(--texto-sm);
   font-weight: var(--peso-medio);
   color: var(--cor-marca);
+  text-align: start;
   text-decoration: none;
 }
 
@@ -107,12 +111,6 @@
 .cartao__acao:hover .cartao__seta,
 .cartao__acao:focus-visible .cartao__seta {
   transform: translateX(3px);
-}
-
-.cartao__acao--inativa {
-  color: var(--cor-texto-suave);
-  font-style: italic;
-  font-weight: var(--peso-normal);
 }
 
 .status {
