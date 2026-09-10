@@ -1,0 +1,70 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  gap: 32px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  position: static;
+  display: inline-block;
+  padding: 8px 12px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+}
+
+.cabecalho__marca {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navegacao ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.conteudo p + p {
+  margin-top: 12px;
+}
+
+.atividades {
+  margin-top: 24px;
+}
+
+.atividades__titulo {
+  font-size: 18px;
+  color: var(--text-h);
+  margin: 0 0 8px;
+}
+
+.atividades__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rodape {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  font-size: 15px;
+}
