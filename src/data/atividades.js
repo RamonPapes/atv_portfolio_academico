@@ -1,5 +1,9 @@
 export const REPOSITORIO = 'https://github.com/RamonPapes/atv_portfolio_academico'
 
+export const FILTROS = ['Todos', 'HTML', 'CSS', 'React', 'Git', 'Vercel']
+
+export const FILTRO_PADRAO = FILTROS[0]
+
 export const STATUS = {
   PLANEJADA: 'Planejada',
   EM_ANDAMENTO: 'Em andamento',
@@ -174,9 +178,9 @@ export const atividades = [
     numero: 17,
     titulo: 'Criar filtro por tecnologia',
     descricao:
-      'Botões Todos, HTML, CSS, React, Git e Vercel controlando com useState quais cartões aparecem, sem alterar o array original.',
+      'Botões Todos, HTML, CSS, React, Git e Vercel guardando a escolha em useState. A lista exibida é derivada com filter a cada renderização, então o array original permanece intacto.',
     tecnologia: ['React', 'useState'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {

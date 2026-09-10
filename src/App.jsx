@@ -1,11 +1,28 @@
+import { useState } from 'react'
 import Cabecalho from './components/Cabecalho.jsx'
 import CartaoAtividade from './components/CartaoAtividade.jsx'
+import FiltroTecnologias from './components/FiltroTecnologias.jsx'
 import Rodape from './components/Rodape.jsx'
-import { atividades, REPOSITORIO } from './data/atividades.js'
+import {
+  atividades,
+  FILTROS,
+  FILTRO_PADRAO,
+  REPOSITORIO,
+} from './data/atividades.js'
 import avatar from './assets/avatar.svg'
 import './App.css'
 
 function App() {
+  const [tecnologiaSelecionada, setTecnologiaSelecionada] =
+    useState(FILTRO_PADRAO)
+
+  const atividadesVisiveis =
+    tecnologiaSelecionada === FILTRO_PADRAO
+      ? atividades
+      : atividades.filter((atividade) =>
+          atividade.tecnologia.includes(tecnologiaSelecionada),
+        )
+
   return (
     <div className="app">
       <a className="skip-link" href="#conteudo">
@@ -80,22 +97,25 @@ function App() {
 
         <section id="atividades" aria-labelledby="titulo-atividades">
           <h2 id="titulo-atividades">As 30 atividades</h2>
-          <p>
-            Lista completa das entregas, da primeira à trigésima, em ordem
-            cronológica.
-          </p>
 
-          {/* Área reservada para a lista das 30 atividades. */}
+          <FiltroTecnologias
+            opcoes={FILTROS}
+            selecionada={tecnologiaSelecionada}
+            aoSelecionar={setTecnologiaSelecionada}
+            total={atividades.length}
+            visiveis={atividadesVisiveis.length}
+          />
+
           <div className="atividades" aria-live="polite">
             <h3 className="atividades__titulo">Quadro de entregas</h3>
             <ul className="atividades__lista">
-              {atividades.length === 0 ? (
+              {atividadesVisiveis.length === 0 ? (
                 <li className="atividades__vazio">
-                  Nenhuma atividade cadastrada ainda. Esta área receberá os 30
-                  cartões de entrega.
+                  Nenhuma atividade usa {tecnologiaSelecionada}. Escolha outra
+                  tecnologia ou volte para Todos.
                 </li>
               ) : (
-                atividades.map((atividade) => (
+                atividadesVisiveis.map((atividade) => (
                   <CartaoAtividade key={atividade.id} {...atividade} />
                 ))
               )}
