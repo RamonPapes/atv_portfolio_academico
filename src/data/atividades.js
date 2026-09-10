@@ -294,11 +294,11 @@ export const atividades = [
     numero: 24,
     titulo: 'Persistir preferência local',
     descricao:
-      'Salvar o tema em localStorage, ler a preferência ao iniciar e definir um padrão quando não houver valor guardado.',
+      'Tema gravado na chave portfolio-academico:tema do localStorage e lido na primeira renderização. Sem valor salvo, vale a preferência do sistema e, na falta dela, o tema claro.',
     detalhes:
-      'Ainda não iniciada. Leitura e gravação do tema em localStorage, com valor padrão quando não houver preferência salva.',
+      'Leitura e gravação isoladas em funções do hook useTema, ambas dentro de try/catch e com validação do valor lido, para o portfólio não quebrar se o armazenamento estiver bloqueado.',
     tecnologia: ['React', 'localStorage'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {
