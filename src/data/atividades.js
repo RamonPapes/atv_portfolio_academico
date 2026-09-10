@@ -282,11 +282,11 @@ export const atividades = [
     numero: 23,
     titulo: 'Implementar alternância de tema',
     descricao:
-      'Botão para alternar entre tema claro e escuro aplicando o tema por atributo no elemento raiz, mantendo contraste e foco visível nos dois.',
+      'Botão no cabeçalho alternando entre claro e escuro. O tema vira um atributo data-tema no elemento raiz e todos os tokens de cor respondem a ele, preservando contraste e foco visível nos dois.',
     detalhes:
-      'Ainda não iniciada. Botão alternando um atributo no elemento raiz, com os tokens de cor respondendo a esse atributo.',
+      'Hook useTema guarda a escolha em useState e um useEffect grava data-tema em document.documentElement; o CSS traz o bloco escuro para prefers-color-scheme e para o atributo explícito.',
     tecnologia: ['React', 'CSS'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {

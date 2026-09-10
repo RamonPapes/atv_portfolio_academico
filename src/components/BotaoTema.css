@@ -1,0 +1,33 @@
+.botao-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-completo);
+  background: transparent;
+  color: var(--cor-texto-forte);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-medio);
+  transition:
+    background var(--transicao),
+    border-color var(--transicao),
+    color var(--transicao);
+}
+
+.botao-tema:hover {
+  border-color: var(--cor-marca-borda);
+  background: var(--cor-marca-suave);
+  color: var(--cor-marca);
+}
+
+.botao-tema__simbolo {
+  font-size: var(--texto-md);
+  line-height: 1;
+}
+
+@media (max-width: 30rem) {
+  .botao-tema__nome {
+    display: none;
+  }
+}

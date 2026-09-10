@@ -1,3 +1,4 @@
+import BotaoTema from './BotaoTema.jsx'
 import './Cabecalho.css'
 
 const LINKS = [
@@ -7,7 +8,7 @@ const LINKS = [
   { href: '#contato', rotulo: 'Contato' },
 ]
 
-function Cabecalho({ marca, titulo }) {
+function Cabecalho({ marca, titulo, tema, aoAlternarTema }) {
   return (
     <header className="cabecalho" id="inicio">
       <div className="cabecalho__identidade">
@@ -15,15 +16,19 @@ function Cabecalho({ marca, titulo }) {
         <h1>{titulo}</h1>
       </div>
 
-      <nav className="navegacao" aria-label="Navegação principal">
-        <ul>
-          {LINKS.map(({ href, rotulo }) => (
-            <li key={href}>
-              <a href={href}>{rotulo}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="cabecalho__acoes">
+        <nav className="navegacao" aria-label="Navegação principal">
+          <ul>
+            {LINKS.map(({ href, rotulo }) => (
+              <li key={href}>
+                <a href={href}>{rotulo}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <BotaoTema tema={tema} aoAlternar={aoAlternarTema} />
+      </div>
     </header>
   )
 }

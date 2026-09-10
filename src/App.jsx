@@ -7,6 +7,7 @@ import FormularioContato from './components/FormularioContato.jsx'
 import ModalAtividade from './components/ModalAtividade.jsx'
 import ProgressoAtividades from './components/ProgressoAtividades.jsx'
 import Rodape from './components/Rodape.jsx'
+import { useTema } from './hooks/useTema.js'
 import {
   atividades,
   FILTROS,
@@ -37,6 +38,7 @@ const mensagemSemResultado = (tecnologia, termo) => {
 }
 
 function App() {
+  const { tema, alternarTema } = useTema()
   const [tecnologiaSelecionada, setTecnologiaSelecionada] =
     useState(FILTRO_PADRAO)
   const [termoBusca, setTermoBusca] = useState('')
@@ -67,7 +69,12 @@ function App() {
         Pular para o conteúdo principal
       </a>
 
-      <Cabecalho marca="Ramon Papes" titulo="Portfólio Acadêmico" />
+      <Cabecalho
+        marca="Ramon Papes"
+        titulo="Portfólio Acadêmico"
+        tema={tema}
+        aoAlternarTema={alternarTema}
+      />
 
       <main id="conteudo" className="conteudo">
         <section
