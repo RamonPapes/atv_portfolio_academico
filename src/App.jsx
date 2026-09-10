@@ -8,14 +8,14 @@ function App() {
         Pular para o conteúdo principal
       </a>
 
-      <header className="cabecalho">
+      <header className="cabecalho" id="inicio">
         <p className="cabecalho__marca">Ramon Papes</p>
         <h1>Portfólio Acadêmico</h1>
 
         <nav className="navegacao" aria-label="Navegação principal">
           <ul>
             <li>
-              <a href="#apresentacao">Apresentação</a>
+              <a href="#inicio">Início</a>
             </li>
             <li>
               <a href="#sobre">Sobre</a>
@@ -118,6 +118,9 @@ function App() {
         <p>
           Portfólio acadêmico desenvolvido para a disciplina de Desenvolvimento
           Web &mdash; {new Date().getFullYear()}.
+        </p>
+        <p>
+          <a href="#inicio">Voltar ao início</a>
         </p>
       </footer>
     </div>

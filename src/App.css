@@ -30,10 +30,37 @@
 .navegacao ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px 16px;
   list-style: none;
   margin: 24px 0 0;
   padding: 0;
+}
+
+.navegacao a {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--text-h);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.navegacao a:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* O foco herda o outline global de :focus-visible; aqui apenas
+   reforçamos o contorno do link dentro do menu. */
+.navegacao a:focus-visible {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* Espaço acima do alvo da âncora, para o título não encostar
+   no topo da janela ao final da rolagem. */
+.app [id] {
+  scroll-margin-top: 24px;
 }
 
 .conteudo {

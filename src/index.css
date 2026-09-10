@@ -50,6 +50,29 @@
   }
 }
 
+/* Rolagem suave entre as âncoras do menu, respeitando quem
+   pediu menos animação no sistema operacional. */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Indicador de foco visível e consistente em toda a página. */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a {
+  color: var(--accent);
+}
+
 body {
   margin: 0;
 }
