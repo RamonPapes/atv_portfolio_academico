@@ -1,0 +1,22 @@
+.progresso {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--espaco-2);
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  background: var(--cor-superficie);
+}
+
+.progresso__numero {
+  font-family: var(--fonte-mono);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-forte);
+  color: var(--cor-texto-forte);
+}
+
+.progresso__rotulo {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-suave);
+}

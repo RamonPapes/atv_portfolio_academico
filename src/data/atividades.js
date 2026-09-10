@@ -198,9 +198,9 @@ export const atividades = [
     numero: 19,
     titulo: 'Criar contador de progresso',
     descricao:
-      'Calcular quantas atividades estão concluídas e exibir no formato concluídas de 30, derivando o número dos dados em vez de guardá-lo em estado.',
+      'Contador no formato concluídas de 30, calculado com filter sobre a lista a cada renderização. Nada é guardado em useState, então o número nunca fica defasado em relação aos dados.',
     tecnologia: ['React', 'JavaScript'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {

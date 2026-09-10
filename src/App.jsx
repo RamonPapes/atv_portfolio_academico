@@ -3,12 +3,14 @@ import BuscaAtividades from './components/BuscaAtividades.jsx'
 import Cabecalho from './components/Cabecalho.jsx'
 import CartaoAtividade from './components/CartaoAtividade.jsx'
 import FiltroTecnologias from './components/FiltroTecnologias.jsx'
+import ProgressoAtividades from './components/ProgressoAtividades.jsx'
 import Rodape from './components/Rodape.jsx'
 import {
   atividades,
   FILTROS,
   FILTRO_PADRAO,
   REPOSITORIO,
+  STATUS,
 } from './data/atividades.js'
 import avatar from './assets/avatar.svg'
 import './App.css'
@@ -38,6 +40,10 @@ function App() {
   const [termoBusca, setTermoBusca] = useState('')
 
   const termo = normalizar(termoBusca)
+
+  const totalConcluidas = atividades.filter(
+    (atividade) => atividade.status === STATUS.CONCLUIDA,
+  ).length
 
   const atividadesVisiveis = atividades.filter((atividade) => {
     const combinaTecnologia =
@@ -126,6 +132,11 @@ function App() {
 
         <section id="atividades" aria-labelledby="titulo-atividades">
           <h2 id="titulo-atividades">As 30 atividades</h2>
+
+          <ProgressoAtividades
+            concluidas={totalConcluidas}
+            total={atividades.length}
+          />
 
           <BuscaAtividades termo={termoBusca} aoBuscar={setTermoBusca} />
 
