@@ -16,6 +16,18 @@
 
   --cor-foco: var(--cor-marca);
 
+  --cor-sucesso: #14683f;
+  --cor-sucesso-suave: #e2f5ea;
+  --cor-sucesso-borda: #a4d9bb;
+
+  --cor-aviso: #8a5200;
+  --cor-aviso-suave: #fdefdb;
+  --cor-aviso-borda: #efce99;
+
+  --cor-neutro: #5a5468;
+  --cor-neutro-suave: #f0eff3;
+  --cor-neutro-borda: #d2cfd9;
+
   --espaco-1: 0.25rem; /*  4px */
   --espaco-2: 0.5rem; /*  8px */
   --espaco-3: 0.75rem; /* 12px */
@@ -82,6 +94,18 @@
     --cor-marca-suave: rgba(192, 140, 255, 0.14);
     --cor-marca-borda: rgba(192, 140, 255, 0.45);
     --cor-marca-contraste: #14131a;
+
+    --cor-sucesso: #74e3a5;
+    --cor-sucesso-suave: rgba(116, 227, 165, 0.14);
+    --cor-sucesso-borda: rgba(116, 227, 165, 0.42);
+
+    --cor-aviso: #f3c169;
+    --cor-aviso-suave: rgba(243, 193, 105, 0.14);
+    --cor-aviso-borda: rgba(243, 193, 105, 0.42);
+
+    --cor-neutro: #a6a0b4;
+    --cor-neutro-suave: rgba(166, 160, 180, 0.12);
+    --cor-neutro-borda: rgba(166, 160, 180, 0.38);
 
     --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
     --sombra-md:

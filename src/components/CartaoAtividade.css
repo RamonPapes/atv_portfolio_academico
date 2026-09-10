@@ -28,6 +28,14 @@
 }
 
 /* ---- Número --------------------------------------------------------------- */
+.cartao__topo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaco-2);
+}
+
 .cartao__numero {
   font-family: var(--fonte-mono);
   font-size: var(--texto-sm);
@@ -105,4 +113,41 @@
   color: var(--cor-texto-suave);
   font-style: italic;
   font-weight: var(--peso-normal);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-1);
+  padding: var(--espaco-1) var(--espaco-2);
+  border: 1px solid var(--cor-neutro-borda);
+  border-radius: var(--raio-completo);
+  background: var(--cor-neutro-suave);
+  color: var(--cor-neutro);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-medio);
+  line-height: 1.5;
+}
+
+.status__simbolo {
+  font-size: 0.9em;
+  line-height: 1;
+}
+
+.status--planejada {
+  border-color: var(--cor-neutro-borda);
+  background: var(--cor-neutro-suave);
+  color: var(--cor-neutro);
+}
+
+.status--andamento {
+  border-color: var(--cor-aviso-borda);
+  background: var(--cor-aviso-suave);
+  color: var(--cor-aviso);
+}
+
+.status--concluida {
+  border-color: var(--cor-sucesso-borda);
+  background: var(--cor-sucesso-suave);
+  color: var(--cor-sucesso);
 }

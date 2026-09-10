@@ -156,17 +156,17 @@ export const atividades = [
     descricao:
       'Gerar os cartões dinamicamente com map sobre o array de atividades, usando uma key estável e exclusiva e conferindo a numeração de 1 a 30.',
     tecnologia: ['React', 'JavaScript'],
-    status: STATUS.PLANEJADA,
-    link: null,
+    status: STATUS.CONCLUIDA,
+    link: commit('675a600'),
   },
   {
     id: 'atv-16',
     numero: 16,
     titulo: 'Mostrar status condicional',
     descricao:
-      'Exibir Planejada, Em andamento ou Concluída com classes visuais distintas, sem condições longas dentro do JSX.',
+      'Status Planejada, Em andamento ou Concluída exibido em etiqueta própria. A escolha da classe visual sai de um objeto de consulta fora do componente, então o JSX não carrega condições encadeadas.',
     tecnologia: ['React', 'CSS'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {
