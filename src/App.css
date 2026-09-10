@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   min-height: 100svh;
-  gap: 32px;
-  padding: 24px;
-  box-sizing: border-box;
+  gap: var(--espaco-7);
+  padding: var(--espaco-5);
+}
+
+.app [id] {
+  scroll-margin-top: var(--espaco-5);
 }
 
 .skip-link {
@@ -15,77 +18,87 @@
 .skip-link:focus {
   position: static;
   display: inline-block;
-  padding: 8px 12px;
-  background: var(--accent-bg);
-  border: 1px solid var(--accent-border);
-  border-radius: 4px;
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1px solid var(--cor-marca-borda);
+  border-radius: var(--raio-sm);
+  background: var(--cor-marca-suave);
+}
+------------------------------------------ */
+.cabecalho__marca {
+  font-family: var(--fonte-mono);
+  font-size: var(--texto-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor-texto-suave);
+  margin-bottom: var(--espaco-2);
 }
 
-.cabecalho__marca {
-  font-family: var(--mono);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.cabecalho h1 {
+  margin-bottom: var(--espaco-5);
 }
 
 .navegacao ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
+  gap: var(--espaco-2) var(--espaco-3);
   list-style: none;
-  margin: 24px 0 0;
+  margin: 0;
   padding: 0;
 }
 
 .navegacao a {
   display: inline-block;
-  padding: 8px 12px;
-  border-radius: 6px;
-  color: var(--text-h);
-  text-decoration: none;
+  padding: var(--espaco-2) var(--espaco-3);
   border: 1px solid transparent;
+  border-radius: var(--raio-md);
+  color: var(--cor-texto-forte);
+  text-decoration: none;
+  transition:
+    background var(--transicao),
+    color var(--transicao);
 }
 
-.navegacao a:hover {
-  background: var(--accent-bg);
-  color: var(--accent);
-}
-
-/* O foco herda o outline global de :focus-visible; aqui apenas
-   reforçamos o contorno do link dentro do menu. */
+.navegacao a:hover,
 .navegacao a:focus-visible {
-  background: var(--accent-bg);
-  color: var(--accent);
+  background: var(--cor-marca-suave);
+  color: var(--cor-marca);
 }
 
-/* Espaço acima do alvo da âncora, para o título não encostar
-   no topo da janela ao final da rolagem. */
-.app [id] {
-  scroll-margin-top: 24px;
-}
-
+/* ---- Conteúdo principal -------------------------------------------------- */
 .conteudo {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: var(--espaco-7);
+}
+
+.conteudo h2 {
+  margin-bottom: var(--espaco-3);
 }
 
 .conteudo p + p {
-  margin-top: 12px;
+  margin-top: var(--espaco-3);
 }
 
+/* ---- Apresentação -------------------------------------------------------- */
 .apresentacao {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 32px;
+  gap: var(--espaco-6);
+  padding: var(--espaco-6);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra-sm);
 }
 
 .apresentacao__avatar {
   width: 160px;
   height: 160px;
-  border-radius: 50%;
   flex-shrink: 0;
+  border-radius: var(--raio-completo);
+  box-shadow: var(--sombra-md);
 }
 
 .apresentacao__texto {
@@ -95,49 +108,55 @@
 .apresentacao__dados {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  margin: 0 0 16px;
-  font-size: 15px;
+  gap: var(--espaco-2) var(--espaco-5);
+  margin: var(--espaco-3) 0 var(--espaco-4);
 }
 
 .apresentacao__dados dt {
-  font-family: var(--mono);
+  font-family: var(--fonte-mono);
+  font-size: var(--texto-xs);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--cor-texto-suave);
 }
 
 .apresentacao__dados dd {
-  margin: 2px 0 0;
-  color: var(--text-h);
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-forte);
 }
 
+/* ---- Botão ---------------------------------------------------------------- */
 .botao {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  border: 1px solid var(--accent-border);
-  border-radius: 6px;
-  background: var(--accent-bg);
-  color: var(--accent);
-  font-weight: 500;
+  margin-top: var(--espaco-5);
+  padding: var(--espaco-3) var(--espaco-5);
+  border: 1px solid var(--cor-marca-borda);
+  border-radius: var(--raio-md);
+  background: var(--cor-marca-suave);
+  color: var(--cor-marca);
+  font-weight: var(--peso-medio);
   text-decoration: none;
+  box-shadow: var(--sombra-sm);
+  transition:
+    background var(--transicao),
+    color var(--transicao),
+    box-shadow var(--transicao);
 }
 
 .botao:hover,
 .botao:focus-visible {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--cor-marca);
+  color: var(--cor-marca-contraste);
+  box-shadow: var(--sombra-md);
 }
 
+/* ---- Quadro de atividades ------------------------------------------------- */
 .atividades {
-  margin-top: 24px;
+  margin-top: var(--espaco-5);
 }
 
 .atividades__titulo {
-  font-size: 18px;
-  color: var(--text-h);
-  margin: 0 0 8px;
+  margin-bottom: var(--espaco-3);
 }
 
 .atividades__lista {
@@ -146,8 +165,23 @@
   padding: 0;
 }
 
+.atividades__vazio {
+  padding: var(--espaco-5);
+  border: 1px dashed var(--cor-borda-forte);
+  border-radius: var(--raio-md);
+  background: var(--cor-superficie);
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-sm);
+}
+
+/* ---- Rodapé ---------------------------------------------------------------- */
 .rodape {
-  border-top: 1px solid var(--border);
-  padding-top: 16px;
-  font-size: 15px;
+  padding-top: var(--espaco-4);
+  border-top: 1px solid var(--cor-borda);
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-suave);
+}
+
+.rodape p + p {
+  margin-top: var(--espaco-2);
 }

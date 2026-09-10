@@ -1,0 +1,92 @@
+:root {
+  --cor-fundo: #ffffff;
+  --cor-superficie: #faf9fc;
+  --cor-borda: #e4e2e8;
+  --cor-borda-forte: #cbc7d3;
+
+  --cor-texto: #4b4459;
+  --cor-texto-forte: #171320;
+  --cor-texto-suave: #6b6375;
+
+  --cor-marca: #7a2ff2;
+  --cor-marca-forte: #5b1fc4;
+  --cor-marca-suave: #f3e9ff;
+  --cor-marca-borda: #d9bcff;
+  --cor-marca-contraste: #ffffff;
+
+  --cor-foco: var(--cor-marca);
+
+  --espaco-1: 0.25rem; /*  4px */
+  --espaco-2: 0.5rem; /*  8px */
+  --espaco-3: 0.75rem; /* 12px */
+  --espaco-4: 1rem; /* 16px */
+  --espaco-5: 1.5rem; /* 24px */
+  --espaco-6: 2rem; /* 32px */
+  --espaco-7: 3rem; /* 48px */
+  --espaco-8: 4rem; /* 64px */
+
+  --raio-sm: 4px;
+  --raio-md: 8px;
+  --raio-lg: 16px;
+  --raio-completo: 999px;
+
+
+  --sombra-sm: 0 1px 2px rgba(23, 19, 32, 0.08);
+  --sombra-md:
+    0 4px 6px -2px rgba(23, 19, 32, 0.06), 0 10px 15px -3px rgba(23, 19, 32, 0.1);
+  --sombra-lg:
+    0 10px 20px -5px rgba(23, 19, 32, 0.12),
+    0 20px 40px -10px rgba(23, 19, 32, 0.16);
+
+  --fonte-texto:
+    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --fonte-titulo: var(--fonte-texto);
+  --fonte-mono:
+    ui-monospace, SFMono-Regular, 'JetBrains Mono', Consolas, 'Courier New',
+    monospace;
+
+  --texto-xs: 0.75rem; /* 12px — etiquetas */
+  --texto-sm: 0.875rem; /* 14px — apoio, rodapé */
+  --texto-md: 1rem; /* 16px — corpo */
+  --texto-lg: 1.125rem; /* 18px — corpo destacado */
+  --texto-xl: 1.25rem; /* 20px — h3 */
+  --texto-2xl: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem); /* h2 */
+  --texto-3xl: clamp(1.875rem, 1.3rem + 2.8vw, 3rem); /* h1 */
+
+  --peso-normal: 400;
+  --peso-medio: 500;
+  --peso-forte: 700;
+
+  --altura-titulo: 1.2;
+  --altura-texto: 1.6;
+
+  /* ---- Layout e movimento ----------------------------------------------- */
+  --largura-max: 1120px;
+  --transicao: 150ms ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #14131a;
+    --cor-superficie: #1c1b24;
+    --cor-borda: #2e2c39;
+    --cor-borda-forte: #423f52;
+
+    --cor-texto: #c3bed0;
+    --cor-texto-forte: #f4f2f8;
+    --cor-texto-suave: #9b95a8;
+
+    --cor-marca: #c08cff;
+    --cor-marca-forte: #d7b4ff;
+    --cor-marca-suave: rgba(192, 140, 255, 0.14);
+    --cor-marca-borda: rgba(192, 140, 255, 0.45);
+    --cor-marca-contraste: #14131a;
+
+    --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --sombra-md:
+      0 4px 6px -2px rgba(0, 0, 0, 0.35), 0 10px 15px -3px rgba(0, 0, 0, 0.45);
+    --sombra-lg:
+      0 10px 20px -5px rgba(0, 0, 0, 0.5), 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+  }
+}
