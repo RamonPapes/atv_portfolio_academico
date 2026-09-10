@@ -1,3 +1,4 @@
+import avatar from './assets/avatar.svg'
 import './App.css'
 
 function App() {
@@ -9,14 +10,13 @@ function App() {
 
       <header className="cabecalho">
         <p className="cabecalho__marca">Ramon Papes</p>
-        <h1>Portfólio Acadêmico de Desenvolvimento Web</h1>
-        <p className="cabecalho__resumo">
-          Registro público da minha evolução na disciplina, reunindo as 30
-          atividades entregues ao longo do semestre.
-        </p>
+        <h1>Portfólio Acadêmico</h1>
 
         <nav className="navegacao" aria-label="Navegação principal">
           <ul>
+            <li>
+              <a href="#apresentacao">Apresentação</a>
+            </li>
             <li>
               <a href="#sobre">Sobre</a>
             </li>
@@ -31,6 +31,46 @@ function App() {
       </header>
 
       <main id="conteudo" className="conteudo">
+        <section
+          id="apresentacao"
+          className="apresentacao"
+          aria-labelledby="titulo-apresentacao"
+        >
+          <img
+            className="apresentacao__avatar"
+            src={avatar}
+            alt="Avatar ilustrativo de Ramon Enrico Alves Papes: silhueta de uma pessoa sobre um círculo roxo."
+            width="160"
+            height="160"
+          />
+
+          <div className="apresentacao__texto">
+            <h2 id="titulo-apresentacao">Ramon Enrico Alves Papes</h2>
+
+            <dl className="apresentacao__dados">
+              <div>
+                <dt>Curso</dt>
+                <dd>Engenharia da Computação</dd>
+              </div>
+              <div>
+                <dt>Turma</dt>
+                <dd>GRDECPDIU20241</dd>
+              </div>
+            </dl>
+
+            <p>
+              Estudante de Engenharia da Computação em formação na área de
+              desenvolvimento web. Neste portfólio reúno as 30 atividades da
+              disciplina, cada uma com sua descrição e link, para acompanhar de
+              forma pública a minha evolução com HTML, CSS, JavaScript e React.
+            </p>
+
+            <a className="botao" href="#atividades">
+              Ver as 30 atividades
+            </a>
+          </div>
+        </section>
+
         <section id="sobre" aria-labelledby="titulo-sobre">
           <h2 id="titulo-sobre">Sobre o projeto</h2>
           <p>
@@ -52,7 +92,8 @@ function App() {
             cronológica.
           </p>
 
-          {/* Área reservada para a lista das 30 atividades. */}
+          {/* Área reservada para a lista das 30 atividades.
+              Nas próximas etapas ela será preenchida dinamicamente. */}
           <div className="atividades" aria-live="polite">
             <h3 className="atividades__titulo">Quadro de entregas</h3>
             <ul className="atividades__lista">

@@ -47,6 +47,62 @@
   margin-top: 12px;
 }
 
+.apresentacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+}
+
+.apresentacao__avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.apresentacao__texto {
+  flex: 1 1 320px;
+}
+
+.apresentacao__dados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0 0 16px;
+  font-size: 15px;
+}
+
+.apresentacao__dados dt {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+}
+
+.apresentacao__dados dd {
+  margin: 2px 0 0;
+  color: var(--text-h);
+}
+
+.botao {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: 1px solid var(--accent-border);
+  border-radius: 6px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.botao:hover,
+.botao:focus-visible {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 .atividades {
   margin-top: 24px;
 }
