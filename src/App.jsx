@@ -1,3 +1,4 @@
+import Cabecalho from './components/Cabecalho.jsx'
 import CartaoAtividade from './components/CartaoAtividade.jsx'
 import avatar from './assets/avatar.svg'
 import './App.css'
@@ -66,6 +67,13 @@ const ATIVIDADES = [
       'Pontos de ajuste em 768px, 480px e 1440px afinando menu, tipografia, margens, avatar e grade. Problema resolvido: em telas estreitas o cabeçalho comprimia o menu contra o título e o avatar de 160px roubava quase toda a largura útil.',
     tecnologias: ['CSS', 'Media Queries', 'Responsividade'],
   },
+  {
+    numero: 9,
+    titulo: 'Componente Cabecalho',
+    descricao:
+      'Cabeçalho e menu extraídos para Cabecalho.jsx, com os estilos movidos para Cabecalho.css e os links vindos de um array. Problema resolvido: marcação e CSS do topo estavam misturados ao restante da página, sem fronteira clara entre as partes.',
+    tecnologias: ['React', 'Componentes'],
+  },
 ]
 
 function App() {
@@ -75,29 +83,7 @@ function App() {
         Pular para o conteúdo principal
       </a>
 
-      <header className="cabecalho" id="inicio">
-        <div className="cabecalho__identidade">
-          <p className="cabecalho__marca">Ramon Papes</p>
-          <h1>Portfólio Acadêmico</h1>
-        </div>
-
-        <nav className="navegacao" aria-label="Navegação principal">
-          <ul>
-            <li>
-              <a href="#inicio">Início</a>
-            </li>
-            <li>
-              <a href="#sobre">Sobre</a>
-            </li>
-            <li>
-              <a href="#atividades">Atividades</a>
-            </li>
-            <li>
-              <a href="#contato">Contato</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Cabecalho marca="Ramon Papes" titulo="Portfólio Acadêmico" />
 
       <main id="conteudo" className="conteudo">
         <section
