@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import BuscaAtividades from './components/BuscaAtividades.jsx'
 import Cabecalho from './components/Cabecalho.jsx'
 import CartaoAtividade from './components/CartaoAtividade.jsx'
 import FiltroTecnologias from './components/FiltroTecnologias.jsx'
@@ -12,16 +13,44 @@ import {
 import avatar from './assets/avatar.svg'
 import './App.css'
 
+const normalizar = (texto) =>
+  texto
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+
+const mensagemSemResultado = (tecnologia, termo) => {
+  if (termo !== '' && tecnologia !== FILTRO_PADRAO) {
+    return `Nenhuma atividade de ${tecnologia} corresponde a "${termo}".`
+  }
+
+  if (termo !== '') {
+    return `Nenhuma atividade corresponde a "${termo}".`
+  }
+
+  return `Nenhuma atividade usa ${tecnologia}.`
+}
+
 function App() {
   const [tecnologiaSelecionada, setTecnologiaSelecionada] =
     useState(FILTRO_PADRAO)
+  const [termoBusca, setTermoBusca] = useState('')
 
-  const atividadesVisiveis =
-    tecnologiaSelecionada === FILTRO_PADRAO
-      ? atividades
-      : atividades.filter((atividade) =>
-          atividade.tecnologia.includes(tecnologiaSelecionada),
-        )
+  const termo = normalizar(termoBusca)
+
+  const atividadesVisiveis = atividades.filter((atividade) => {
+    const combinaTecnologia =
+      tecnologiaSelecionada === FILTRO_PADRAO ||
+      atividade.tecnologia.includes(tecnologiaSelecionada)
+
+    const combinaTermo =
+      termo === '' ||
+      normalizar(atividade.titulo).includes(termo) ||
+      normalizar(atividade.descricao).includes(termo)
+
+    return combinaTecnologia && combinaTermo
+  })
 
   return (
     <div className="app">
@@ -98,6 +127,8 @@ function App() {
         <section id="atividades" aria-labelledby="titulo-atividades">
           <h2 id="titulo-atividades">As 30 atividades</h2>
 
+          <BuscaAtividades termo={termoBusca} aoBuscar={setTermoBusca} />
+
           <FiltroTecnologias
             opcoes={FILTROS}
             selecionada={tecnologiaSelecionada}
@@ -111,8 +142,8 @@ function App() {
             <ul className="atividades__lista">
               {atividadesVisiveis.length === 0 ? (
                 <li className="atividades__vazio">
-                  Nenhuma atividade usa {tecnologiaSelecionada}. Escolha outra
-                  tecnologia ou volte para Todos.
+                  {mensagemSemResultado(tecnologiaSelecionada, termoBusca.trim())}{' '}
+                  Ajuste a busca ou volte para o filtro Todos.
                 </li>
               ) : (
                 atividadesVisiveis.map((atividade) => (

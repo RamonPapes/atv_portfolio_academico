@@ -188,9 +188,9 @@ export const atividades = [
     numero: 18,
     titulo: 'Criar busca por texto',
     descricao:
-      'Campo de busca controlado filtrando por título ou descrição sem diferenciar maiúsculas e minúsculas, com mensagem para o estado sem resultados.',
+      'Campo controlado filtrando por título ou descrição, ignorando maiúsculas e acentos, combinado com o filtro de tecnologia e com mensagem própria quando nada é encontrado.',
     tecnologia: ['React', 'useState'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {
