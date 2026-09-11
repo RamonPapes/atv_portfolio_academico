@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react'
+import { REPOSITORIO } from '../data/atividades.js'
 import './ModalAtividade.css'
 
 /** Vale para as entregas cujo link é o commit que as registrou. */
 const ROTULO_LINK_PADRAO = 'Ver o commit desta entrega'
+
+const HISTORICO = `${REPOSITORIO}/commits/main`
 
 function ModalAtividade({ atividade, aoFechar }) {
   const dialogoRef = useRef(null)
@@ -71,7 +74,12 @@ function ModalAtividade({ atividade, aoFechar }) {
             </a>
           ) : (
             <span className="modal__sem-link">
-              Commit ainda não publicado para esta entrega.
+              Esta entrega não tem link próprio: ela está em funcionamento aqui
+              mesmo no portfólio, e o código dela fica no{' '}
+              <a href={HISTORICO} rel="noreferrer">
+                histórico de commits do repositório
+              </a>
+              .
             </span>
           )}
         </p>

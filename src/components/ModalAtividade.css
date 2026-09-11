@@ -107,7 +107,7 @@
   font-size: var(--texto-sm);
 }
 
+/* Frase inteira, não mais um aviso curto: o itálico saiu para não pesar. */
 .modal__sem-link {
   color: var(--cor-texto-suave);
-  font-style: italic;
 }
