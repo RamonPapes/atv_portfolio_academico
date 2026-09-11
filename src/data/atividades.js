@@ -10,7 +10,11 @@ export const STATUS = {
   CONCLUIDA: 'Concluída',
 }
 
+export const SITE = 'https://atv-portfolio-academico.vercel.app/'
+
 const commit = (hash) => `${REPOSITORIO}/commit/${hash}`
+
+const arquivo = (caminho) => `${REPOSITORIO}/blob/main/${caminho}`
 
 export const atividades = [
   {
@@ -332,10 +336,11 @@ export const atividades = [
     descricao:
       'Documentação com título, descrição, tecnologias, pré-requisitos, comandos, estrutura de pastas, autoria e campos para os links do repositório e da Vercel.',
     detalhes:
-      'Ainda não iniciada. README com descrição, tecnologias, pré-requisitos, comandos, estrutura de pastas e campos para os links.',
+      'README com descrição do projeto, tabela de links do repositório e da Vercel, lista de funcionalidades, tecnologias e o papel de cada uma, pré-requisitos de versão do Node exigidos pelo Vite, passos de instalação, tabela dos quatro comandos npm, árvore de pastas comentada, configuração de publicação e autoria.',
     tecnologia: ['Markdown', 'Documentação'],
-    status: STATUS.PLANEJADA,
-    link: null,
+    status: STATUS.CONCLUIDA,
+    link: arquivo('README.md'),
+    rotuloLink: 'Abrir o README no GitHub',
   },
   {
     id: 'atv-28',
@@ -344,10 +349,11 @@ export const atividades = [
     descricao:
       'Revisão de git status e git log, commits descritivos sem arquivos indevidos e criação da tag local v1.0.0 após validar a versão final.',
     detalhes:
-      'Ainda não iniciada. Revisão de git log, commits descritivos e criação da tag local v1.0.0.',
+      'Histórico revisado com git status e git log: um commit por atividade, mensagens no imperativo descrevendo a entrega, e nenhum arquivo indevido versionado, já que node_modules, dist e arquivos locais estão no .gitignore desde a atividade 2. A versão final recebeu a tag v1.0.0.',
     tecnologia: ['Git'],
-    status: STATUS.PLANEJADA,
-    link: null,
+    status: STATUS.CONCLUIDA,
+    link: `${REPOSITORIO}/commits/main`,
+    rotuloLink: 'Ver o histórico de commits',
   },
   {
     id: 'atv-29',
@@ -356,10 +362,11 @@ export const atividades = [
     descricao:
       'Repositório remoto associado ao projeto local, com envio da branch main e da tag v1.0.0 e conferência dos arquivos e do README pelo navegador.',
     detalhes:
-      'Ainda não iniciada. Repositório remoto associado ao projeto local e envio da branch main e da tag v1.0.0.',
+      'Remoto origin apontando para o repositório no GitHub, com a branch main enviada e acompanhando origin/main, mais o envio da tag v1.0.0. Arquivos e README conferidos pelo navegador depois do push.',
     tecnologia: ['Git', 'GitHub'],
-    status: STATUS.PLANEJADA,
-    link: null,
+    status: STATUS.CONCLUIDA,
+    link: REPOSITORIO,
+    rotuloLink: 'Abrir o repositório no GitHub',
   },
   {
     id: 'atv-30',
@@ -368,10 +375,11 @@ export const atividades = [
     descricao:
       'Publicação na Vercel com validação de menu, filtros, busca, modal, formulário e responsividade na URL gerada, mais atualização do README com o link final.',
     detalhes:
-      'Ainda não iniciada. Importação do repositório na Vercel, teste da URL publicada e atualização do README com o link final.',
+      'Repositório importado na Vercel com o build padrão do Vite, npm run build gerando a pasta dist, e deploy a cada push na main. Menu, filtros, busca, modal, formulário e responsividade testados na URL publicada, que entrou no README e neste cartão.',
     tecnologia: ['Vercel', 'Deploy'],
-    status: STATUS.PLANEJADA,
-    link: null,
+    status: STATUS.CONCLUIDA,
+    link: SITE,
+    rotuloLink: 'Abrir o portfólio publicado',
   },
 ]
 

@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react'
 import './ModalAtividade.css'
 
+/** Vale para as entregas cujo link é o commit que as registrou. */
+const ROTULO_LINK_PADRAO = 'Ver o commit desta entrega'
+
 function ModalAtividade({ atividade, aoFechar }) {
   const dialogoRef = useRef(null)
 
@@ -64,7 +67,7 @@ function ModalAtividade({ atividade, aoFechar }) {
         <p className="modal__acao">
           {atividade.link ? (
             <a href={atividade.link} rel="noreferrer">
-              Ver o commit desta entrega
+              {atividade.rotuloLink ?? ROTULO_LINK_PADRAO}
             </a>
           ) : (
             <span className="modal__sem-link">
