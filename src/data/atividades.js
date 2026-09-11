@@ -320,9 +320,9 @@ export const atividades = [
     descricao:
       'Revisão de headings, labels, alt, foco, contraste e uso por teclado, sem depender apenas de cor para transmitir status, com no mínimo cinco verificações registradas.',
     detalhes:
-      'Ainda não iniciada. Revisão de headings, labels, alt, foco, contraste e navegação por teclado, com as verificações registradas.',
+      'Doze verificações registradas em docs/acessibilidade.md. Seis passaram sem ajuste e seis viraram correção: níveis de título do diálogo, nome acessível do botão de tema, contraste das bordas de controle elevado a 3:1 nos dois temas, foco do link de pular e do botão Limpar, marca de seleção no filtro e região viva reduzida ao contador.',
     tecnologia: ['Acessibilidade', 'HTML'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {

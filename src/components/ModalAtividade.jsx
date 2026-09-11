@@ -41,13 +41,13 @@ function ModalAtividade({ atividade, aoFechar }) {
           </button>
         </div>
 
-        <h3 className="modal__titulo" id="modal-titulo">
+        <h2 className="modal__titulo" id="modal-titulo">
           {atividade.titulo}
-        </h3>
+        </h2>
 
         <p className="modal__descricao">{atividade.descricao}</p>
 
-        <h4 className="modal__subtitulo">Como foi feita</h4>
+        <h3 className="modal__subtitulo">Como foi feita</h3>
         <p className="modal__detalhes">{atividade.detalhes}</p>
 
         <dl className="modal__dados">

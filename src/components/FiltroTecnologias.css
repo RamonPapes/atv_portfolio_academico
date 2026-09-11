@@ -13,6 +13,9 @@
 }
 
 .filtro__botao {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
   padding: var(--espaco-2) var(--espaco-4);
   border: 1px solid var(--cor-borda-forte);
   border-radius: var(--raio-completo);
@@ -42,6 +45,12 @@
   border-color: var(--cor-marca);
   background: var(--cor-marca);
   color: var(--cor-marca-contraste);
+}
+
+/* A marca acompanha a cor de fundo: a seleção não depende só de cor. */
+.filtro__marca {
+  font-size: var(--texto-xs);
+  line-height: 1;
 }
 
 .filtro__resultado {

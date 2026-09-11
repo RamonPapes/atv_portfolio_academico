@@ -19,13 +19,18 @@ function FiltroTecnologias({ opcoes, selecionada, aoSelecionar, total, visiveis 
               aria-pressed={ativa}
               onClick={() => aoSelecionar(opcao)}
             >
+              {ativa && (
+                <span className="filtro__marca" aria-hidden="true">
+                  ✓
+                </span>
+              )}
               {opcao}
             </button>
           )
         })}
       </div>
 
-      <p className="filtro__resultado">
+      <p className="filtro__resultado" role="status">
         Mostrando {visiveis} de {total} atividades
       </p>
     </div>

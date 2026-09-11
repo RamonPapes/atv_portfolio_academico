@@ -2,7 +2,7 @@
   --cor-fundo: #ffffff;
   --cor-superficie: #faf9fc;
   --cor-borda: #e4e2e8;
-  --cor-borda-forte: #cbc7d3;
+  --cor-borda-forte: #958da5; /* 3:1 com fundo e superfície: borda de controle */
 
   --cor-texto: #4b4459;
   --cor-texto-forte: #171320;
@@ -88,7 +88,7 @@
     --cor-fundo: #14131a;
     --cor-superficie: #1c1b24;
     --cor-borda: #2e2c39;
-    --cor-borda-forte: #423f52;
+    --cor-borda-forte: #686482; /* 3:1 com fundo e superfície: borda de controle */
 
     --cor-texto: #c3bed0;
     --cor-texto-forte: #f4f2f8;
@@ -129,7 +129,7 @@
   --cor-fundo: #14131a;
   --cor-superficie: #1c1b24;
   --cor-borda: #2e2c39;
-  --cor-borda-forte: #423f52;
+  --cor-borda-forte: #686482; /* 3:1 com fundo e superfície: borda de controle */
 
   --cor-texto: #c3bed0;
   --cor-texto-forte: #f4f2f8;

@@ -1,9 +1,13 @@
 import { TEMAS } from '../hooks/useTema.js'
 import './BotaoTema.css'
 
+/**
+ * O nome do tema atual fica visível e a ação vai num texto só para leitores de
+ * tela, então o nome acessível começa pelo rótulo que se lê na tela.
+ */
 const APARENCIA_TEMA = {
-  [TEMAS.CLARO]: { simbolo: '☾', rotulo: 'Ativar tema escuro', nome: 'Claro' },
-  [TEMAS.ESCURO]: { simbolo: '☀', rotulo: 'Ativar tema claro', nome: 'Escuro' },
+  [TEMAS.CLARO]: { simbolo: '☾', nome: 'Claro', acao: 'Ativar tema escuro' },
+  [TEMAS.ESCURO]: { simbolo: '☀', nome: 'Escuro', acao: 'Ativar tema claro' },
 }
 
 function BotaoTema({ tema, aoAlternar }) {
@@ -14,15 +18,13 @@ function BotaoTema({ tema, aoAlternar }) {
       type="button"
       className="botao-tema"
       onClick={aoAlternar}
-      title={aparencia.rotulo}
-      aria-label={aparencia.rotulo}
+      title={aparencia.acao}
     >
       <span className="botao-tema__simbolo" aria-hidden="true">
         {aparencia.simbolo}
       </span>
-      <span className="botao-tema__nome" aria-hidden="true">
-        {aparencia.nome}
-      </span>
+      <span className="botao-tema__nome">{aparencia.nome}</span>
+      <span className="sr-only">{aparencia.acao}</span>
     </button>
   )
 }

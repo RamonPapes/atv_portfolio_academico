@@ -77,7 +77,7 @@ function App() {
         aoAlternarTema={alternarTema}
       />
 
-      <main id="conteudo" className="conteudo">
+      <main id="conteudo" className="conteudo" tabIndex={-1}>
         <section
           id="apresentacao"
           className="apresentacao"
@@ -150,7 +150,7 @@ function App() {
             visiveis={atividadesVisiveis.length}
           />
 
-          <div className="atividades" aria-live="polite">
+          <div className="atividades">
             <h3 className="atividades__titulo">Quadro de entregas</h3>
             <ul className="atividades__lista">
               {atividadesVisiveis.length === 0 ? (
