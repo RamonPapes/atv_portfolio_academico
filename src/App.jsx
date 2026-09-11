@@ -7,6 +7,7 @@ import FormularioContato from './components/FormularioContato.jsx'
 import ModalAtividade from './components/ModalAtividade.jsx'
 import ProgressoAtividades from './components/ProgressoAtividades.jsx'
 import Rodape from './components/Rodape.jsx'
+import Sobre from './components/Sobre.jsx'
 import { useTema } from './hooks/useTema.js'
 import {
   atividades,
@@ -126,19 +127,10 @@ function App() {
           </div>
         </section>
 
-        <section id="sobre" aria-labelledby="titulo-sobre">
-          <h2 id="titulo-sobre">Sobre o projeto</h2>
-          <p>
-            Este portfólio organiza, em um único lugar, todas as entregas da
-            disciplina de Desenvolvimento Web. Cada atividade recebe um cartão
-            próprio, com título, descrição e link, para que qualquer pessoa
-            encontre rapidamente o que procura.
-          </p>
-          <p>
-            A construção é incremental: cada avanço vira um commit no histórico
-            do repositório, documentando a evolução do trabalho.
-          </p>
-        </section>
+        <Sobre
+          autor="Ramon Enrico Alves Papes"
+          curso="Engenharia da Computação"
+        />
 
         <section id="atividades" aria-labelledby="titulo-atividades">
           <h2 id="titulo-atividades">As 30 atividades</h2>

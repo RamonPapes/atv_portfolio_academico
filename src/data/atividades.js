@@ -308,9 +308,9 @@ export const atividades = [
     descricao:
       'Componente Sobre com texto autoral, tecnologias praticadas sem exagerar o nível de domínio e links profissionais apropriados para publicação.',
     detalhes:
-      'Ainda não iniciada. Componente Sobre com texto autoral, lista de tecnologias praticadas e links profissionais.',
+      'Sobre.jsx traz o texto autoral e o objetivo profissional, uma lista de tecnologias em que cada item declara o estágio real de uso no projeto, e apenas links públicos: perfil no GitHub, repositório e e-mail.',
     tecnologia: ['React', 'HTML'],
-    status: STATUS.PLANEJADA,
+    status: STATUS.CONCLUIDA,
     link: null,
   },
   {
